@@ -10,7 +10,7 @@
             font-family: Papyrus, sans-serif;
             margin: 50px;
             line-height: 2.0;
-            background-color: #0d0d0f; /* Fondo oscuro elegante */
+            background-color: #0d0d0f; /* Fondo oscuro */
             color: #f5cce8;           /* Texto rosado suave */
             overflow-x: hidden;      
         }
@@ -24,14 +24,14 @@
         }
 
         h1 {
-            color: #ff5da2; /* Rosado brillante */
-            text-shadow: 0 0 10px #ff2d8d;
+            color: #ff5da2; /* Rosado intenso */
         }
 
         img {
             margin-top: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 15px #ff78b3;
+            /* glow eliminado */
+            box-shadow: none;
         }
 
         /* --- CORAZONES --- */
@@ -39,87 +39,3 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            overflow: hidden;
-            z-index: 0;
-        }
-
-        .corazon {
-            position: absolute;
-            top: -10vh;
-            font-size: 20px;
-            animation-name: caer;
-            animation-timing-function: linear;
-            color: #ff4f9a;
-            opacity: 0.9;
-            filter: drop-shadow(0 0 6px #ff4f9a);
-        }
-
-        @keyframes caer {
-            0% {
-                transform: translateY(0) translateX(0) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(110vh) translateX(20px) rotate(360deg);
-                opacity: 0;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- CAPA PARA LOS CORAZONES -->
-    <div class="corazones"></div>
-
-    <div class="contenedor">
-        <h1>Anto te Amo</h1>
-
-        <p>
-            Anto te amo muchito jeje, cásate conmigo pls.  
-            Eres lo mejor que me ha pasado, te quiero a mi lado siempre.  
-            Te prometo por todo lo que tengo que siempre daré lo mejor de mí  
-            para que lo nuestro funcione, porque no te quiero perder nunca.
-            Tan solo un mensaje tuyo me alegra todo el día, tan solo escuchar tu voz
-            me alegra todo el día, tan solo estar contigo, me alegra todo el día.  
-            Eres mi alegría constante y la razón por la que me levanto de la cama.
-            Mi meta más grande es poder vivir esta vida contigo.  
-            Eres la mujer más maravillosa que existe, antito. Te amo muchísimo.  
-            Aunque te quedes dormida en llamadas SJDHDJSHDJH te amo,  
-            y deseo escucharte de nuevo cerquita en mi oreja.
-            <br><br>
-            TE AMO MUCHOOOO (bésame)
-        </p>
-
-        <img src="tequieroamor.jpg" alt="Descripción" width="300">
-    </div>
-
-    <script>
-        const contenedorCorazones = document.querySelector('.corazones');
-
-        function crearCorazon() {
-            const corazon = document.createElement('span');
-            corazon.classList.add('corazon');
-            corazon.textContent = '💗';
-
-            const posX = Math.random() * window.innerWidth;
-            corazon.style.left = posX + 'px';
-
-            const size = 15 + Math.random() * 25;
-            corazon.style.fontSize = size + 'px';
-
-            const duracion = 4 + Math.random() * 4;
-            corazon.style.animationDuration = duracion + 's';
-
-            contenedorCorazones.appendChild(corazon);
-
-            setTimeout(() => corazon.remove(), duracion * 1000);
-        }
-
-        setInterval(crearCorazon, 400);
-    </script>
-
-</body>
-</html>
