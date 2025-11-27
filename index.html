@@ -5,36 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PerroTechnoFox</title>
     <style>
+        /* --- MODO OSCURO POR DEFECTO --- */
         body {
             font-family: Papyrus, sans-serif;
             margin: 50px;
             line-height: 2.0;
-            background-color: #ffe4ec;
-            color: #2a2a2a;
-            overflow-x: hidden; /* Para que no aparezca scroll horizontal */
+            background-color: #0d0d0f; /* Fondo oscuro elegante */
+            color: #f5cce8;           /* Texto rosado suave */
+            overflow-x: hidden;      
         }
+
         .contenedor {
             max-width: 800px;
             margin: auto;
             text-align: center;
             position: relative;
-            z-index: 1; /* Para que quede sobre los corazones */
-        }
-        h1 {
-            color: #ff0066;
-        }
-        img {
-            margin-top: 20px;
+            z-index: 1;
         }
 
-        /* CONTENEDOR DE LOS CORAZONES */
+        h1 {
+            color: #ff5da2; /* Rosado brillante */
+            text-shadow: 0 0 10px #ff2d8d;
+        }
+
+        img {
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px #ff78b3;
+        }
+
+        /* --- CORAZONES --- */
         .corazones {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none; /* Para que no molesten al hacer clic */
+            pointer-events: none;
             overflow: hidden;
             z-index: 0;
         }
@@ -45,8 +52,9 @@
             font-size: 20px;
             animation-name: caer;
             animation-timing-function: linear;
-            color: #ff0066;
+            color: #ff4f9a;
             opacity: 0.9;
+            filter: drop-shadow(0 0 6px #ff4f9a);
         }
 
         @keyframes caer {
@@ -62,6 +70,7 @@
     </style>
 </head>
 <body>
+
     <!-- CAPA PARA LOS CORAZONES -->
     <div class="corazones"></div>
 
@@ -73,21 +82,17 @@
             Eres lo mejor que me ha pasado, te quiero a mi lado siempre.  
             Te prometo por todo lo que tengo que siempre daré lo mejor de mí  
             para que lo nuestro funcione, porque no te quiero perder nunca.
-            Tan solo un mensaje tuyo me alegra todo el dia, tan solo escuchar tu voz
-            me alegra todo el dia, tan solo estar contigo, me alegra todo el dia. Eres
-            mi alegria de todos los dias y la razon por la que me levanto de la cama.
-            Mi meta mas grande en mi vida es poder pasarla contigo, solo contigo. Porque
-            eres la mujer mas maravillosa y preciosa que cualquier humano haya podido
-            conocer. Eres la mejor, antito, te amo mucho y aunque te quedes dormida
-            en llamadas SJDHDJSHDJH te amo, ojala poder volver a escuchar tu preciosa voz
-            en mi oreja, contigo al frente.
-            Eres lo que mas amo y quiero en toda mi vida. Nunca me dejes porfavor.
-
+            Tan solo un mensaje tuyo me alegra todo el día, tan solo escuchar tu voz
+            me alegra todo el día, tan solo estar contigo, me alegra todo el día.  
+            Eres mi alegría constante y la razón por la que me levanto de la cama.
+            Mi meta más grande es poder vivir esta vida contigo.  
+            Eres la mujer más maravillosa que existe, antito. Te amo muchísimo.  
+            Aunque te quedes dormida en llamadas SJDHDJSHDJH te amo,  
+            y deseo escucharte de nuevo cerquita en mi oreja.
             <br><br>
             TE AMO MUCHOOOO (bésame)
         </p>
 
-        <!-- AQUÍ VA LA IMAGEN -->
         <img src="tequieroamor.jpg" alt="Descripción" width="300">
     </div>
 
@@ -97,32 +102,24 @@
         function crearCorazon() {
             const corazon = document.createElement('span');
             corazon.classList.add('corazon');
-            corazon.textContent = '💗'; // Puedes cambiar por 💘 💝 💗
+            corazon.textContent = '💗';
 
-            // Posición horizontal aleatoria
             const posX = Math.random() * window.innerWidth;
             corazon.style.left = posX + 'px';
 
-            // Tamaño aleatorio
-            const size = 15 + Math.random() * 25; // entre 15px y 40px aprox
+            const size = 15 + Math.random() * 25;
             corazon.style.fontSize = size + 'px';
 
-            // Duración aleatoria de la caída
-            const duracion = 4 + Math.random() * 4; // entre 4s y 8s
+            const duracion = 4 + Math.random() * 4;
             corazon.style.animationDuration = duracion + 's';
 
             contenedorCorazones.appendChild(corazon);
 
-            // Eliminar el corazón después de que termine la animación
-            setTimeout(() => {
-                corazon.remove();
-            }, duracion * 1000);
+            setTimeout(() => corazon.remove(), duracion * 1000);
         }
 
-        // Crear corazones continuamente
-        setInterval(crearCorazon, 400); // cada 400ms aprox
+        setInterval(crearCorazon, 400);
     </script>
+
 </body>
 </html>
-
-
