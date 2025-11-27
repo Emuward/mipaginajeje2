@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Simple</title>
+    <style>
+        body {
+            font-family: Papyrus, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+        }
+        .contenedor {
+            max-width: 800px;
+            margin: auto;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Anto te Amo</h1>
+        <p>.
+Anto te amo muchito jeje casate conmigo pls.
+        </p.
+    </div>
+</body>
+</html>
